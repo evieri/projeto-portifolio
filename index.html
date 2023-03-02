@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <menu>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <div id="home">
+            <div class="text-image-home">
+                <div class="text-home">
+                    <p class="small-presentation-text">Hi, i'm</p>
+                    <p onmouseover="showName()" onmouseout="hideName()" class="big-presentation-text">
+                        e<span class="full-name"><span class ="hidden-name" id="hidden-name">mmanuel </span><span class="vieri">vieri</span></span>
+                    </p>
+                    <p class="small-presentation-text">Front-end Developer</p>
+                    <button>Linkedin</button>
+                </div>
+                <div class="image-home">
+                    <img src="MANEL.png" alt="" width="500px">
+                </div>
+            </div>
+        </div>
+        <div id="about">
+            <div>
+                <img src="" alt="">
+            </div>
+            <h1>About me</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet cum, minima vero ab non distinctio itaque odio quas qui culpa eaque est voluptate, nostrum inventore, excepturi adipisci consequuntur ipsum tempora.</p>
+        </div>
+        <div id="projects">
+            <h1>Projects</h1>
+            <div class="carousel-container">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+            <div class="carousel-buttons">
+                <button class="prev-button">Prev</button>
+                <button class="next-button">Next</button>
+            </div>
+        </div>
+        <div id="skills">
+            <h1>Skills</h1>
+        </div>
+    </main>
+    <footer>
+        <p>Feito por <a href="https://github.com/evieri">Emmanuel Vieri</a></p>
+        <p>e-mail: emmanuel.vieri@gmail.com</p>
+        <img src="" alt="">
+        <img src="" alt="">
+    </footer>
+
+    <script>
+        function showName() {
+            var hiddenName = document.getElementById("hidden-name");
+            hiddenName.classList.add("show-name");
+
+            // var vieri = document.getElementsByClassName("vieri");
+            // vieri.classList.add("vieri-translated");
+            // vieri.classList.remove("vieri");
+
+            var elementoMovel = document.getElementByClassName("vieri");
+            var elementoReferencia = document.getElementById("elemento-referencia");
+
+            var topDiff = elementoReferencia.offsetTop - elementoMovel.offsetTop;
+            var leftDiff = elementoReferencia.offsetLeft - elementoMovel.offsetLeft;
+
+            elementoMovel.style.transform = "translate(" + leftDiff + "px, " + topDiff + "px)";
+            elementoMovel.classList.add("mover");
+        }
+
+        function hideName() {
+            var showedName = document.getElementById("hidden-name");
+            showedName.classList.remove("show-name");
+        }
+    </script>
+</body>
+</html>
