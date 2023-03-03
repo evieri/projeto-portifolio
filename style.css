@@ -1,17 +1,28 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+}
+
+html, main {
+    background-color: #159A9C;
 }
 
 header {
-    background-color: #DEEFE7;
-
     display: flex;
+    position: fixed;
     height: 100px;
+    width: 100%;
     justify-content: end;
     border-bottom: 2px solid white;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 header menu {
@@ -25,6 +36,7 @@ header ul {
     align-items: center;
     height: 100%;
     list-style-type: none;
+    color: black;
 }
 
 header li a {
@@ -32,15 +44,11 @@ header li a {
     color: white;
 }
 
-main {
-    background-color: #DEEFE7;
-}
-
 main div#home {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: linear-gradient(45deg, #DEEFE7, #159A9C);
     color: white;
@@ -48,10 +56,12 @@ main div#home {
 
 main div.text-image-home {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 60%;
+    width: 80%;
     height: 60%;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
 }
 
 main p.small-presentation-text {
@@ -59,33 +69,43 @@ main p.small-presentation-text {
 }
 
 main p.big-presentation-text {
-    font-size: 6em;
+    font-size: 5em;
+}
+
+main div.image-home img{
+    width: 25vw;
+    margin: 0 5vh;
+}
+
+.text-home button {
+    height: 4em;
+    width: 100%;
+    margin-top: 3em;
+    border-radius: 30px;
+    border: 0px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    transition: .3s;
+}
+
+.text-home button:hover {
+    background-color: #002333;
+    color: white;
+    letter-spacing: .2em;
 }
 
 .hidden-name {
     display: hidden;
     opacity: 0;
-    transition: opacity .3s;
-}
-
-.vieri {
-    position: absolute;
-    left: 0;
-}
-
-span.vieri-translated {
-    position: relative;
-    transform: translate(0, 0);
-    transition: transform 0.5s ease;
-}
-
-.full-name {
-    position: relative;
+    transition: .75s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    letter-spacing: -0.7em;
 }
 
 .show-name {
     display: inline;
     opacity: 1;
+    letter-spacing: normal;
 }
 
 main div.foto {
@@ -96,14 +116,20 @@ main div.foto {
 
 main div#about {
     background-color: #159A9C;
+    height: 100vh;
+    width: 100vw;
 }
 
 main div#projects {
     background-color: #DEEFE7;
+    height: 100vh;
+    width: 100vw;
 }
 
 main div#skills {
     background-color: #159A9C;
+    height: 100vh;
+    width: 100vw;
 }
 
 footer {
