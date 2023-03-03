@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 html, main {
@@ -15,10 +16,10 @@ html, main {
 header {
     display: flex;
     position: fixed;
-    height: 100px;
+    height: 90px;
     width: 100%;
     justify-content: end;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
     backdrop-filter: blur(5px);
@@ -26,7 +27,7 @@ header {
 }
 
 header menu {
-    width: 60%;
+    width: 50%;
     height: 100%;
 }
 
@@ -37,11 +38,30 @@ header ul {
     height: 100%;
     list-style-type: none;
     color: black;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    letter-spacing: .075em;
+}
+
+header li {
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 
 header li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: white;
+    height: 100%;
+    width: 100%;
+    transition: .3s ease-in-out;
+}
+
+header li a:hover {
+    background-color: #159A9C;
 }
 
 main div#home {
@@ -98,14 +118,15 @@ main div.image-home img{
 .hidden-name {
     display: hidden;
     opacity: 0;
-    transition: .75s cubic-bezier(0.215, 0.610, 0.355, 1.000);
     letter-spacing: -0.7em;
+    transition: letter-spacing 1.3s .5s ease-in-out, opacity .5s ease-out;
 }
 
 .show-name {
     display: inline;
     opacity: 1;
     letter-spacing: normal;
+    transition: .75s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 
 main div.foto {
